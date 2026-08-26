@@ -467,6 +467,20 @@ function handlePacket(Packet, Type) {
 
           break
 
+          case "6":
+
+            let chatMessageData = Packet[1]
+
+            let id = chatMessageData[0]
+            let message = chatMessageData[1]
+
+            window.chatMessages.push({
+              playerId: id,
+              message: message
+            })
+
+          break
+
         }
 
       break
